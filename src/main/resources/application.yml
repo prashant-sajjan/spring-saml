@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    saml2:
+      relyingparty:
+        registration:
+          carsonline:
+            signing:
+              credentials:
+                - private-key-location: classpath:private.key
+                  certificate-location: classpath:certificate.cert
+            decryption:
+              credentials:
+                - private-key-location: classpath:private.key
+                  certificate-location: classpath:certificate.cert
+            assertingparty:
+              metadata-uri: "classpath:okta-metadata.xml"
